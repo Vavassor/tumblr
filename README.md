@@ -1,1 +1,1 @@
-﻿Tumblr theme for [Donut Secret Ghost House](vavassor.tumblr.com)
+﻿Tumblr theme for [Donut Secret Ghost House](http://vavassor.tumblr.com)
