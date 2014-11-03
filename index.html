@@ -1,0 +1,587 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+
+<title>{Title}</title>
+<meta name="author" content="Vavassor">
+
+{block:Description}
+<meta name="description" content="{MetaDescription}">
+{/block:Description}
+
+<link rel="shortcut icon" href="{Favicon}">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+<link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+
+<style>
+@font-face {
+    font-family: 'Sheandy';
+    src: url(http://static.tumblr.com/w3dl7ol/VeLnee6as/sheandy.ttf) format('truetype');
+    font-weight: normal;
+}
+	
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: none;
+	outline: 0;
+	font-style: normal;
+	border: none;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    background: #FFFFFF url(http://static.tumblr.com/w3dl7ol/N5enee8uu/pw_maze_white.png);
+	color: #000;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+p {
+    margin: 1em 0;
+}
+
+blockquote {
+	margin: 1em 20px;
+	border-left: solid 3px #8cddef;
+	padding-left: 10px;
+}
+
+h1, h2, h3 {
+	padding: 0.5em;
+}
+
+pre {
+	overflow: scroll;
+	tab-size: 4;
+	-ms-tab-size: 4;
+	border: 1px solid #eee;
+}
+
+div.clear {
+	clear: both;
+}
+
+#main_header {
+	display: block;
+	width: 500px;
+	margin: auto;
+	text-align: center;
+}
+
+#main_header h1 {
+    padding: 0;
+    font-family: 'Sheandy', sans-serif;
+    font-weight: normal;
+    font-size: 4em;
+}
+
+#main_header a {
+    border: none;
+}
+
+#main_navigation {
+	display: block;
+	width: 70%;
+	margin: auto;
+}
+
+#main_navigation a {
+	margin-bottom: 1px;
+	border-bottom: none;
+}
+
+#main_navigation a:hover {
+    margin-bottom: 0;
+	border-bottom: 1px solid #000000;
+}
+
+ul.menu {
+	border: 1px dashed #ccc;
+	border-width: 1px 0;
+}
+
+ul.menu li {
+	display: inline;
+}
+
+ul.menu a {
+	display: inline-block;
+	padding: 0.3em;
+}
+
+main {
+	display: block;
+	width: 640px;
+	margin: auto;
+}
+
+article {
+    clear: both;
+    overflow: hidden;
+    margin: 2em 0;
+}
+
+aside.sidebar {
+    float: left;
+    width: 120px;
+    padding: 1em 10px;
+    text-align: right;
+}
+
+.icon-text {
+	background: url(http://static.tumblr.com/zpzjmbx/FQhlnawe2/icon-sheet.png) -135px -45px;
+	width: 45px;
+	height: 45px;
+	float: right;
+	display: block;
+}
+
+.icon-quote {
+	background: url(http://static.tumblr.com/zpzjmbx/FQhlnawe2/icon-sheet.png);
+	width: 45px;
+	height: 45px;
+	float: right;
+	display: block;
+}
+
+.icon-photo {
+	background: url(http://static.tumblr.com/zpzjmbx/FQhlnawe2/icon-sheet.png) -45px 0px;
+	width: 45px;
+	height: 45px;
+	float: right;
+	display: block;
+}
+
+.icon-video {
+	background: url(http://static.tumblr.com/zpzjmbx/FQhlnawe2/icon-sheet.png) -90px 0px;
+	width: 45px;
+	height: 45px;
+	float: right;
+	display: block;
+}
+
+.icon-audio {
+	background: url(http://static.tumblr.com/zpzjmbx/FQhlnawe2/icon-sheet.png) -135px 0px;
+	width: 45px;
+	height: 45px;
+	float: right;
+	display: block;
+}
+
+.icon-link {
+	background: url(http://static.tumblr.com/zpzjmbx/FQhlnawe2/icon-sheet.png) 0px -45px;
+	width: 45px;
+	height: 45px;
+	float: right;
+	display: block;
+}
+
+.icon-reblog {
+	background: url(http://static.tumblr.com/zpzjmbx/FQhlnawe2/icon-sheet.png) -45px -45px;
+	width: 45px;
+	height: 45px;
+	float: right;
+	display: block;
+}
+
+.icon-chat {
+	background: url(http://static.tumblr.com/zpzjmbx/FQhlnawe2/icon-sheet.png) -90px -45px;
+	width: 45px;
+	height: 45px;
+	float: right;
+	display: block;
+}
+
+.sidetext {
+    clear: right;
+    padding-top: 1em;
+}
+
+.sidetext a {
+    border-bottom: 1px dashed #000000;
+}
+
+.sidetext a:hover {
+    border-bottom-color: #8cddef;
+}
+
+.post {
+    float: left;
+    width: 500px;
+	background: #FFFFFF;
+}
+
+.textbox {
+    padding: 0 1em;
+}
+
+.textbox a {
+	border-bottom: 1px dotted #000;
+	color: #000;
+}
+
+.textbox a:hover {
+	border-bottom-color: #8cddef;
+}
+
+footer.caption {
+    padding: 0 1em;
+}
+
+footer.caption a {
+	border-bottom: 1px dotted #000;
+	color: #000;
+}
+
+footer.caption a:hover {
+	border-bottom-color: #8cddef;
+}
+
+img.audio-art {
+	width: 150px;
+	height: 150px;
+	padding-right: 20px;
+	float: left;
+}
+
+div.audio-player {
+	padding: 1em 0;
+}
+
+span.audio-text {
+	padding-bottom: 0.5em;
+	font-family: 'Droid Sans', arial, sans-serif;
+	color: #000;
+	font-size: 14px;
+	line-height: 130%;
+	display: block;
+}
+
+ul.tags li {
+    display: inline;
+    padding-right: 1em;
+}
+
+section.notes {
+    padding: 1em;
+    width: 100%;
+}
+
+ol.notes li.note img.avatar {
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+}
+
+#main_footer {
+	display: block;
+	width: 75%;
+	min-width: 640px;
+	margin: auto;
+	padding-bottom: 1em;
+	text-align: center;
+}
+
+#page_links ol li {
+    display: inline;
+    padding-right: 2em;
+}
+
+#page_links a {
+    border: 0 none;
+    color: #000000;
+}
+
+#page_links a:hover .arrow {
+    color: #8cddef;
+}
+
+.credits {
+    margin-top: 1em;
+}
+
+.credits a {
+    border-bottom: 1px dashed #8cddef;
+}
+
+.credits a:hover {
+    color: #FFBD32;
+    border-bottom: 1px dashed #FFBD32;
+    margin-bottom: 1px;
+}
+
+	{CustomCSS}
+</style>
+</head>
+
+<body>
+<header id="main_header">
+	<nav id="main_navigation">
+		<ul class="menu">
+			<li><a href="/about">About</a></li>
+			<li><a href="/tagged/art">Art</a></li>
+			<li><a href="http://keylesspalace.com">Games</a></li>
+			<li><a href="/ask">Ask/Tell</a></li>
+			<li><a href="/archive">Archive</a></li>
+		</ul>
+	</nav>
+	<h1><a href="/">{Title}</a></h1>
+	{block:Description}
+	<p id="description">{Description}</p>
+	{/block:Description}
+</header>
+<main role="main">
+	{block:Posts}
+	
+	{block:Text}
+	<article>
+    	<aside class="sidebar">
+    		<a href="{Permalink}"><div class="icon-text"></div></a>
+    		<div class="sidetext">
+    		    {block:Date}
+    		    <p><time>{DayOfWeek}, {DayOfMonth} {Month} {Year}</time></p>
+    		    {/block:Date}
+    			{block:NoteCount}
+    		    <p><a href="{Permalink}">{NoteCountWithLabel}</a></p>
+    			{/block:NoteCount}
+    		</div>
+    	</aside>
+    	<section class="post">
+    	    {block:Title}
+    	    <h2>{Title}</h2>
+    	    {/block:Title}
+            <section class="textbox">
+    		    {Body}
+    		</section>
+    	</section>
+	</article>
+	{/block:Text}
+	
+	{block:Photo}
+	<article>
+    	<aside class="sidebar">
+    		<a href="{Permalink}"><div class="icon-photo"></div></a>
+    		<div class="sidetext">
+    		    {block:Date}
+    		    <p><time>{DayOfWeek}, {DayOfMonth} {Month} {Year}</time></p>
+    		    {/block:Date}
+    			{block:NoteCount}
+    		    <p><a href="{Permalink}">{NoteCountWithLabel}</a></p>
+    			{/block:NoteCount}
+    		</div>
+    	</aside>
+    	<section class="post">
+    		{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}">{LinkCloseTag}
+    		{block:Caption}
+    		<footer class="caption">{Caption}</footer>
+    		{/block:Caption}
+		</section>
+	</article>
+	{/block:Photo}
+	
+	{block:Photoset}
+	<article>
+    	<aside class="sidebar">
+    		<a href="{Permalink}"><div class="icon-photo"></div></a>
+    		<div class="sidetext">
+    		    {block:Date}
+    		    <p><time>{DayOfWeek}, {DayOfMonth} {Month} {Year}</time></p>
+    		    {/block:Date}
+    			{block:NoteCount}
+    		    <p><a href="{Permalink}">{NoteCountWithLabel}</a></p>
+    			{/block:NoteCount}
+    		</div>
+    	</aside>
+    	<section class="post">
+    		{Photoset-500}
+    		{block:Caption}
+    		<footer class="caption">{Caption}</footer>
+    		{/block:Caption}
+    	</section>
+    </article>
+	{/block:Photoset}
+	
+	{block:Audio}
+	<article>
+    	<aside class="sidebar">
+    		<a href="{Permalink}"><div class="icon-audio"></div></a>
+    		<div class="sidetext">
+    		    {block:Date}
+    		    <p><time>{DayOfWeek}, {DayOfMonth} {Month} {Year}</time></p>
+    		    {/block:Date}
+    			{block:NoteCount}
+    		    <p><a href="{Permalink}">{NoteCountWithLabel}</a></p>
+    			{/block:NoteCount}
+    		</div>
+    	</aside>
+    	<section class="post">
+    		{block:AlbumArt}
+    			<img class="audio-art" src="{AlbumArtURL}">
+    		{/block:AlbumArt}
+    		<div class="audio-player">{AudioPlayer}</div>
+    		<span class="audio-text"><strong>{PlayCountWithLabel}</strong></span>
+    		{block:Artist}
+    			<span class="audio-text"><strong>Artist</strong>: {Artist}</span>
+    		{/block:Artist}
+    		{block:TrackName}
+    			<span class="audio-text"><strong>Name</strong>: {TrackName}</span>
+    		{/block:TrackName}
+    		{block:Caption}
+    		<footer class="caption">
+    			<span class="audio-text">{Caption}</span>
+    		</footer>
+    		{/block:Caption}
+    	</section>
+	</article>
+	{/block:Audio}
+	
+	{block:Video}
+	<article>
+    	<aside class="sidebar">
+    		<a href="{Permalink}"><div class="icon-video"></div></a>
+    		<div class="sidetext">
+    		    {block:Date}
+    		    <p><time>{DayOfWeek}, {DayOfMonth} {Month} {Year}</time></p>
+    		    {/block:Date}
+    			{block:NoteCount}
+    		    <p><a href="{Permalink}">{NoteCountWithLabel}</a></p>
+    			{/block:NoteCount}
+    		</div>
+    	</aside>
+    	<section class="post">
+    		{Video-500}
+    		{block:Caption}
+    			<footer class="caption">{Caption}</div>
+    		{/block:Caption}
+    	</section>
+	</article>
+	{/block:Video}
+	
+	{block:Link}
+	<article>
+    	<aside class="sidebar">
+    		<a href="{Permalink}"><div class="icon-link"></div></a>
+    		<div class="sidetext">
+    		    {block:Date}
+    		    <p><time>{DayOfWeek}, {DayOfMonth} {Month} {Year}</time></p>
+    		    {/block:Date}
+    			{block:NoteCount}
+    		    <p><a href="{Permalink}">{NoteCountWithLabel}</a></p>
+    			{/block:NoteCount}
+    		</div>
+    	</aside>
+    	<section class="post">
+            <section class="textbox">
+    			<h3><a href="{URL}" {Target}>{Name}</a></h3>
+    			{block:Description}
+    				<p style="padding-left: 10px;">{Description}</p>
+    			{/block:Description}
+    		</section>
+		</section>
+	</article>
+	{/block:Link}
+	
+	{block:Quote}
+	<article>
+    	<aside class="sidebar">
+    		<a href="{Permalink}"><div class="icon-quote"></div></a>
+    		<div class="sidetext">
+    		    {block:Date}
+    		    <p><time>{DayOfWeek}, {DayOfMonth} {Month} {Year}</time></p>
+    		    {/block:Date}
+    			{block:NoteCount}
+    		    <p><a href="{Permalink}">{NoteCountWithLabel}</a></p>
+    			{/block:NoteCount}
+    		</div>
+    	</aside>
+    	<section class="post">
+            <section class="textbox">
+                <blockquote>
+    			    <p>{Quote}</p>
+    			    {block:Source}
+    				<footer> &mdash; <cite>{Source}</cite> </footer>
+    			    {/block:Source}
+    			</blockquote>
+    		</section>
+		</section>
+	</article>
+	{/block:Quote}
+	
+	{block:Chat}
+	<article>
+    	<aside class="sidebar">
+    		<a href="{Permalink}"><div class="icon-chat"></div></a>
+    		<div class="sidetext">
+    		    {block:Date}
+    		    <p><time>{DayOfWeek}, {DayOfMonth} {Month} {Year}</time></p>
+    		    {/block:Date}
+    			{block:NoteCount}
+    		    <p><a href="{Permalink}">{NoteCountWithLabel}</a></p>
+    			{/block:NoteCount}
+    		</div>
+    	</aside>
+    	<section class="post">
+    	    <section class="textbox">
+    			{block:Title}
+    				<h3>{Title}</h3>
+    			{/block:Title}
+    			{block:Lines}
+    				<p>{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</p>
+    			{/block:Lines}
+    		</section>
+		</section>
+	</article>
+	{/block:Chat}
+	
+	{block:PostNotes}
+    	{block:HasTags}
+	    <section class="tags">
+	        <ul class="tags">
+	            {block:Tags}
+	            <li>
+	                <a href="{TagURL}">{Tag}</a>
+	            </li>
+	            {/block:Tags}
+	        </ul>
+	    </section>
+    	{/block:HasTags}
+    	
+		<section class="notes">
+			{PostNotes}
+		</section>
+	{/block:PostNotes}
+	
+	{/block:Posts}
+</main>
+<footer id="main_footer">
+    <nav id="page_links">
+        <ol>
+            {block:PreviousPage}
+            <li>
+                <a href="{PreviousPage}"><span class="arrow">&#9664;</span> Previous</a>
+            </li>
+	        {/block:PreviousPage}
+        	{block:NextPage}
+        	<li>
+        	    <a href="{NextPage}">Next <span class="arrow">&#9654;</span></a>
+        	</li>
+        	{/block:NextPage}
+	    </ol>
+	</nav>
+	<section class="credits">
+	    &copy;{CopyrightYears} &sim;
+	    <a href="/theme">Theme</a> made by Me! &sim;
+	    <a href="{RSS}">RSS</a>
+	</section>
+</footer>
+</body>
+
+</html>
